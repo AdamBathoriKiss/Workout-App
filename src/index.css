@@ -1,13 +1,188 @@
-body {
+*{
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*Navigation bar CSS properties*/
+
+.Navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #141414;
 }
+
+
+.navImage {
+
+  width: 7%;
+  height: 7%;
+
+}
+
+.Links {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin: 1%;
+  width: 20%;
+ 
+}
+
+.login {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #405cf5;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 10px 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.login:disabled {
+  cursor: default;
+}
+
+.login:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+
+.signup {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: #6A00FF;
+  border-radius: 6px;
+  border-width: 0;
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+  box-sizing: border-box;
+  color: #fff;
+  cursor: pointer;
+  font-family: -apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Ubuntu,sans-serif;
+  font-size: 100%;
+  height: 44px;
+  line-height: 1.15;
+  margin: 12px 10px 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all .2s,box-shadow .08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.signup:disabled {
+  cursor: default;
+}
+
+.signup:focus {
+  box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset, rgba(50, 50, 93, .2) 0 6px 15px 0, rgba(0, 0, 0, .1) 0 2px 2px 0, rgba(50, 151, 211, .3) 0 0 0 4px;
+}
+
+/*Homepage CSS properties*/
+.HomePage {
+  min-height: 100vh;
+  background-image: url('../src/images/homebackground.jpg');
+  background-repeat: no-repeat;
+  margin: 0;
+}
+
+.Homemessage {
+  padding-top: 5%;
+  width: 32%;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-right: auto;
+  margin-left: auto;
+ 
+}
+
+.Homemessage h1,h5 {
+
+margin: 7% 2.5%;
+text-align: justify;
+
+}
+
+.Homelink{
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  width: 50%;
+  margin-bottom: 4%;
+}
+
+
+/*Login page CSS */
+
+.LoginPage, .SignupPage, .ExercisesPage{
+  background-color: #141414;
+  height: 100vh;
+  color: whitesmoke;
+}
+
+
+
+form {
+
+  padding-top: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  width: 35%;
+
+}
+
+
+.form-control {
+  margin: 2% 0;
+
+}
+
+.Bodyparts ul {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  
+
+}
+
+.Bodyparts li {
+
+  list-style: none;
+  margin: 0.5%;
+  
+}
+
