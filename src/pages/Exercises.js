@@ -1,13 +1,39 @@
+import { useState, useEffect } from "react";
+import axios from "axios";
+import { Link } from "react-router-dom";
+ 
+const API_URL = "http://localhost:5005";
+
 function Exercises() {
+  const [exercises, setExercises] = useState([]);
+  const [buttonType, setButtonType] = useState([]);
+
+  const getAllExercises = () => {
+    axios
+      .get(`${API_URL}/api/exercises`)
+      .then((response) => setExercises(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  // We set this effect will run only once, after the initial render
+  // by setting the empty dependency array - []
+  useEffect(() => {
+    getAllExercises();
+  }, [] );
+
+ 
+
+ 
+
     return (
       <div className="ExercisesPage">
 
         <div className="Bodyparts">
 
           <ul>
+
               <li>Chest</li>
-              <li>Back</li>
-              <li>Biceps</li>
+              <li>Biceps</li>    
               <li>Triceps</li>
               <li>Shoulders</li>
               <li>Abs</li>
@@ -17,23 +43,31 @@ function Exercises() {
 
         </div>
 
-        {/* <div className="Exercises">
 
-        <ul >
+        <div className="ExercisesList">
 
-              <li>Exercise 1</li>
-              <li>Exercise 2</li>
-              <li>Exercise 3</li>
-              <li>Exercise 4</li>
-              <li>Exercise 5</li>
-              <li>Exercise 6</li>
-              <li>Exercise 7</li>
+     <div className="Chest">
+               
+     {exercises.map((exercise) => {
+         
 
-          </ul>
+              return (
+                <div className="ProjectCard card" key={exercise._id} >
+                <h3>{exercise.nameOfExercise}</h3>
+              <p>{exercise.description}</p>
+              <p>{exercise.category}</p>
+                
+                </div>
+              );
 
-        </div> */}
+      })}  
+</div> 
 
-      </div>
+  </div>
+
+</div>
+      
+     
     );
   }
    
