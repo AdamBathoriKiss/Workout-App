@@ -1,23 +1,35 @@
 import mainlogo from '../images/mainlogo.png';
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useContext } from "react";                     
 import { AuthContext } from "../context/auth.context";
 
 
 function Navbar() {
-  const { isLoggedIn, user } = useContext(AuthContext);
+  const { 
+    isLoggedIn,
+    user,                   // <== UPDATE
+    logOutUser              // <== UPDATE
+  } = useContext(AuthContext);
 
     return (
       <nav className="Navbar">
       
           <img src={mainlogo} className="navImage"></img>
 
+            <div className='Navelements'>
+
               {isLoggedIn && (
         <>
-          <Link to="/projects">
-            <button>Projects</button>
-          </Link>        
-          <button>Logout</button>
+          <Link to="/">
+            Homepage
+          </Link> 
+          <Link to="/Exercises">
+            Exercises
+          </Link>
+          <Link to="/Workouts">
+            Workouts
+          </Link>                
+          <button onClick={logOutUser}>Logout</button>
         </>
       )}
  
@@ -28,6 +40,7 @@ function Navbar() {
         </>
       )} 
 
+</div>
       </nav>
     );
   }

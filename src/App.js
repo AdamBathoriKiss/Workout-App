@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+
 import './App.css';
 import Navbar from './components/Navbar';
 import Login from './pages/Login';
@@ -8,6 +8,7 @@ import Exercises from './pages/Exercises';
 import Workouts from './pages/Workouts';
 import ErrorPage from './pages/Errorpage';
 import { Routes, Route } from "react-router-dom";
+
 
 
 function App() {

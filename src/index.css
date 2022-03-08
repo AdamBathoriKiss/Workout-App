@@ -21,15 +21,26 @@
 
 }
 
-.Links {
-
+.Navelements {
+  width: 25%;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-  margin: 1%;
-  width: 20%;
- 
+  justify-content: space-around;
+  align-items: center;
+  
 }
+
+.Navelements a{
+  color: whitesmoke;
+  text-decoration: none;
+}
+
+.Navelements a:hover
+{
+  color: #e1183a;
+  text-decoration: none;
+}
+
 
 .login {
   appearance: button;
@@ -207,3 +218,28 @@ form {
   text-align: justify;
 
 }
+
+.WorkoutsPage{
+  background-color: #141414;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+.WorkoutCreate {
+ 
+  
+  color: #fff;
+  width: 100%;
+  height: 80vh;
+
+}
+
+.WorkoutsPage h1 {
+margin-left: auto;
+margin-right: auto;
+}
+

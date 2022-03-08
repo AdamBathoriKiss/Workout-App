@@ -6,7 +6,7 @@ const API_URL = "http://localhost:5005";
 
 function Exercises() {
   const [exercises, setExercises] = useState([]);
-  const [buttonType, setButtonType] = useState([]);
+  const [exerdata,setExerdata] = useState([]);
 
   const getAllExercises = () => {
     axios
@@ -21,27 +21,43 @@ function Exercises() {
     getAllExercises();
   }, [] );
 
+  const handleSelect = e => {
+    setExercises(e.target.value);
  
+    console.log('selected', e.target.value);
+  };
 
- 
+  const filterExerciseList = str => {
+    let filteredExercises;
+    
+    if (str === 'All') {
+      filteredExercises = exercises;
+    } else if(str === 'Chest'){
+      filteredExercises = exercises.filter(ex => {
+        return ex.category === str.category;
+      });
+    }
+  
+    setExerdata(filteredExercises);
+  };
+  
 
     return (
       <div className="ExercisesPage">
 
-        <div className="Bodyparts">
-
-          <ul>
-
-              <li>Chest</li>
-              <li>Biceps</li>    
-              <li>Triceps</li>
-              <li>Shoulders</li>
-              <li>Abs</li>
-              <li>Legs</li>
-
-          </ul>
-
-        </div>
+<div className="Bodyparts">
+      <label>Show exercises by Bodyparts:</label>
+      <select value={exercises} onChange={handleSelect}>
+        <option value="All">All</option>
+        <option value="Chest">Chest</option>
+        <option value="Back">Back</option>
+        <option value="Biceps">Biceps</option>
+        <option value="Triceps">Triceps</option>
+        <option value="Shoulders">Shoulders</option>
+        <option value="Legs">Legs</option>
+        <option value="Abs">Abs</option>
+      </select>
+    </div>
 
 
         <div className="ExercisesList">
