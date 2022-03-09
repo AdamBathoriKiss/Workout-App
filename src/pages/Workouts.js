@@ -1,25 +1,32 @@
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import WorkoutCreater from "../components/WorkoutCreater";
 const API_URL = "http://localhost:5005";
 
+
 function Workouts(props) {
   const [workout, setWorkout] = useState([]);
- 
+  const { workoutId } = useParams();
+  const navigate =  useNavigate();
+  const storedToken = localStorage.getItem("authToken");
 
   const getWorkouts = () => {
     axios
-      .get(`${API_URL}/reg/register`)
+      .get(`${API_URL}/api/register`)
       .then((response) => setWorkout(response.data))
+      .then(() => navigate("/workouts"))
       .catch((error) => console.log(error));
   };
 
-  // We set this effect will run only once, after the initial render
-  // by setting the empty dependency array - []
+
   useEffect(() => {
     getWorkouts();
   }, [] );
+
+  
+ 
 
     return (
       <div className="WorkoutsPage">
@@ -28,23 +35,31 @@ function Workouts(props) {
 
         <div className="WorkoutCreate">
 
-              <h4>Create</h4>
 
-              <div className="Chest">
-              <label for="workout-names">Choose Workout:</label>
+              <WorkoutCreater/>
+
+              <div className="Workouts">
+             
                {workout.map((workouts) => {
                    
                         return (
-                          <div className="Workout" key={workouts._id} >
-                            <h2>{workouts.nameOfWorkout}</h2>
-                          </div>
+                          <div className="Workoutcard" key={workouts.id} >
+       
+                            <Link to={`/workouts/${workouts._id}`}>
+                                    <h3>{workouts.nameOfWorkout}</h3>
+                                   
+                                  </Link>
+                            
+                        </div>
                         );
-          
+
                       })}  
+
+            
           </div> 
               
                
-                <WorkoutCreater/>
+                
           </div>
 
        </div>

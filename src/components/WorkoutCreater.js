@@ -24,9 +24,9 @@ function WorkoutCreater(props) {
         // Make an axios request to the API
         // If POST request is successful redirect to login page
         // If the request resolves with an error, set the error message in the state
-        axios.post(`${API_URL}/reg/register`, requestBody)
+        axios.post(`${API_URL}/api/register`, requestBody)
           .then((response) => {
-            navigate('/workouts');
+            navigate('/Workout.js');
           })
           .catch((error) => {
             const errorDescription = error.response.data.message;

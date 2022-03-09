@@ -199,6 +199,7 @@ form {
 
 .card {
   width: 15%;
+  height: 10%;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
   margin: 0 auto;
@@ -207,17 +208,6 @@ form {
   border-radius: 4px;
 }
 
-
-
-
-.ProjectListPage{
-
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  text-align: justify;
-
-}
 
 .WorkoutsPage{
   background-color: #141414;
@@ -230,11 +220,12 @@ form {
 }
 
 .WorkoutCreate {
- 
-  
+
   color: #fff;
   width: 100%;
-  height: 80vh;
+  height: 100vh;
+  margin-top: -8%;
+  padding: 0;
 
 }
 
@@ -243,3 +234,51 @@ margin-left: auto;
 margin-right: auto;
 }
 
+
+.ExercisesList {
+  
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+
+}
+
+.ExercisesPage{
+  min-height: 100vh;
+}
+
+.Workouts{
+  margin-top: 5%;
+}
+
+.Workoutcard{
+  width: 15%;
+  height: 10%;
+  padding: 10px;
+  box-shadow: 0px 2px 3px grey;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  background: #6A00FF;
+  border-radius: 4px;
+
+ 
+}
+
+.Workoutcard a {
+
+  text-align: center;
+  text-decoration: none;
+  color: wheat;
+
+}
+
+.WorkoutDetails {
+  background-color: #141414;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
