@@ -7,8 +7,16 @@ function Addingexer (props) {
   
   const [workoutState, setWorkoutState] = useState("");
   const [workout, setWorkout] = useState([]);
-
+  const [exerciseinfo,setExerciseinfo] = useState([]);
  
+  const getExercises = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/exercises`)
+      .then((response) => { 
+        setExerciseinfo(response.data)
+       })
+      .catch((error) => console.log(error));
+  };
 
   const getWorkouts = () => {
     axios
@@ -39,7 +47,7 @@ function Addingexer (props) {
 
   useEffect(() => {
     getWorkouts();
-   
+    getExercises()
   }, [] );
 
  
@@ -48,8 +56,14 @@ function Addingexer (props) {
   
       <h3>Select a Workout:</h3>
       <WorkoutFilter filterWokrouts = {filterWorkoutList}/>
-      <input type="text" defaultValue="Tester" disabled={this.disabled}></input>
+      {exerciseinfo.map((exercise) => {
+
+      <input type="text" defaultValue={exercise.nameOfExercise} disabled={this.disabled}></input>
+      })}
+      
       <button>Add To Workout</button>
+
+
       <Link to="/exercises">
         <button>Back to Exercises</button>
       </Link> 
