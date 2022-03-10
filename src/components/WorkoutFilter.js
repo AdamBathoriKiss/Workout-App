@@ -15,7 +15,6 @@ function WorkoutFilter(props) {
 
   };
 
-  
   const getAllWorkouts = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/register`)
@@ -27,23 +26,28 @@ function WorkoutFilter(props) {
     getAllWorkouts();
   }, [] );
 
-  const list= workouts.map((workout) => {
+  const list = workouts.map((workout) => {
     return (
-        <div className='Tester'>
-
-        <option value={workout.nameOfWorkout}>{workout.nameOfWorkout}</option>
-    
-      </div>
+        <>
+    {workout.nameOfWorkout}
+    </>
     )
-    console.log(list)
-    
 })
-
   return (
     <div className="FilterWorkouts">
-        
+
+
+
+<div className='Tester'>
 <label>Select Exercises:</label>
-<select value={workoutname} onChange={handleSelect}>{list}</select>
+
+        <select value={workoutname} onChange={handleSelect}>
+        <option value={workout.nameOfWorkout}>{list}</option>
+        </select>
+      </div>
+
+
+
       
     </div>
   );
