@@ -58,7 +58,7 @@ function Addingexer (props) {
       <WorkoutFilter filterWokrouts = {filterWorkoutList}/>
       {exerciseinfo.map((exercise) => {
 
-      <input type="text" defaultValue={exercise.nameOfExercise} disabled={this.disabled}></input>
+      <input type="text" defaultValue={exercise.nameOfExercise} disabled={exercise.disabled}></input>
       })}
       
       <button>Add To Workout</button>
