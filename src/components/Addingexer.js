@@ -8,21 +8,20 @@ function Addingexer (props) {
   const [workoutState, setWorkoutState] = useState("");
   const [workout, setWorkout] = useState([]);
 
-  const navigate =  useNavigate();
  
 
   const getWorkouts = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/register`)
       .then((response) => { 
-        setExercises(response.data)
-        setExerData(response.data)
+        setWorkoutState(response.data)
+        setWorkout(response.data)
        })
       .catch((error) => console.log(error));
   };
 
   const filterWorkoutList = str => {
-    let workoutCopy = [...workout];
+    let workoutCopy = [...workoutState];
     let filteredWorkout;
     console.log(str, 'String inside');
     if(str === ''){
