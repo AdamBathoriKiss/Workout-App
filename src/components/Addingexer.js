@@ -48,7 +48,7 @@ function Addingexer (props) {
   
       <h3>Select a Workout:</h3>
       <WorkoutFilter filterWokrouts = {filterWorkoutList}/>
-      <input type="text" defaultValue={workout.nameOfWorkout}></input>
+      <input type="text" defaultValue="Tester"></input>
       <button>Add To Workout</button>
       <Link to="/exercises">
         <button>Back to Exercises</button>
