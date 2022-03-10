@@ -5,7 +5,7 @@ import WorkoutFilter from "./WorkoutFilter";
 
 function Addingexer (props) {
   
-  const [workoutState, SetWorkoutState] = useState("");
+  const [workoutState, setWorkoutState] = useState("");
   const [workout, setWorkout] = useState([]);
 
   const navigate =  useNavigate();
@@ -14,8 +14,10 @@ function Addingexer (props) {
   const getWorkouts = () => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/api/register`)
-      .then((response) => setWorkout(response.data))
-      .then(() => navigate("/workouts"))
+      .then((response) => { 
+        setExercises(response.data)
+        setExerData(response.data)
+       })
       .catch((error) => console.log(error));
   };
 
@@ -38,6 +40,7 @@ function Addingexer (props) {
 
   useEffect(() => {
     getWorkouts();
+   
   }, [] );
 
  
