@@ -29,7 +29,7 @@ function WorkoutFilter(props) {
   return (
     <div className="FilterWorkouts">
 
-{workouts.map((workout) => {
+{workouts.filter((workout) => {
     return (
         <div className='Tester'>
 <label>Select Exercises:</label>
