@@ -13,17 +13,18 @@ function WorkoutFilter(props) {
     props.WorkoutFilter(e.target.value);
     console.log('selected', e.target.value);
 
-    const getAllWorkouts = () => {
-        axios
-          .get(`${process.env.REACT_APP_API_URL}/api/register`)
-          .then((response) => setWorkouts(response.data))
-          .catch((error) => console.log(error));
-      };
-
-      useEffect(() => {
-        getAllWorkouts();
-      }, [] );
   };
+
+  const getAllWorkouts = () => {
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/api/register`)
+      .then((response) => setWorkouts(response.data))
+      .catch((error) => console.log(error));
+  };
+
+  useEffect(() => {
+    getAllWorkouts();
+  }, [] );
 
   return (
     <div className="FilterWorkouts">
