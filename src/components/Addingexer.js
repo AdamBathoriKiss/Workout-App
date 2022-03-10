@@ -65,7 +65,7 @@ function Addingexer (props) {
       <button>Add To Workout</button>
 
       </div>
-
+ <button>Csak</button>
       <Link to="/exercises">
         <button>Back to Exercises</button>
       </Link> 
