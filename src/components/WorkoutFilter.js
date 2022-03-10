@@ -26,23 +26,16 @@ function WorkoutFilter(props) {
     getAllWorkouts();
   }, [] );
 
-  const list = workouts.map((workout) => {
-    return (
-        <>
-    {workout.nameOfWorkout}
-    </>
-    )
-})
+ 
   return (
     <div className="FilterWorkouts">
-
-
 
 <div className='Tester'>
 <label>Select Exercises:</label>
 
         <select value={workoutname} onChange={handleSelect}>
-        <option value="name">{list.workout.nameOfWorkout}</option>
+        <option value="Select Workout">Select Workout</option>    
+        {workouts.map((workout)=> <option value={workout.nameOfWorkout}>{workout.nameOfWorkout}</option>)}
         </select>
       </div>
 
