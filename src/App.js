@@ -11,6 +11,7 @@ import { Routes, Route } from "react-router-dom";
 import IsPrivate from "./components/IsPrivate"; 
 import IsAnon from './components/IsAnon';
 import WorkoutDetails from './components/WorkoutDetails';
+import Addingexer from './components/Addingexer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
     <Route path="/exercises"element={ <Exercises /> } />
     <Route path="/workouts" element={<Workouts /> }  />
     <Route path="/workouts/:workoutId" element={<WorkoutDetails />} /> 
+    <Route path="/exercises/:exerciseId" element={<Addingexer />} /> 
     <Route path="*" element={<ErrorPage/>}/>
     </Routes>
 

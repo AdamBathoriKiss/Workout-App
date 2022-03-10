@@ -282,3 +282,52 @@ margin-right: auto;
   align-items: center;
 
 }
+
+.ProjectCard{
+
+  width: 20%;
+  min-height: 10%;
+  padding: 10px;
+  box-shadow: 0px 2px 3px grey;
+  margin: 2% 5%;
+  margin-bottom: 20px;
+  background: #405cf5;
+  border-radius: 4px;
+  text-align: justify;
+
+}
+
+.Addpage {
+
+  background-color: #141414;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.AddEx{
+  background-color: #6A00FF;
+  width: 35%;
+  min-height: 35vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.AddEx a {
+  text-decoration: none;
+}
+
+.Addbutn  {
+
+  background-color: #141414;
+  text-decoration: none;
+
+}

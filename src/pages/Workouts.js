@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import WorkoutCreater from "../components/WorkoutCreater";
-const API_URL = "http://localhost:5005";
+
 
 
 function Workouts(props) {
@@ -14,7 +14,7 @@ function Workouts(props) {
 
   const getWorkouts = () => {
     axios
-      .get(`${API_URL}/api/register`)
+      .get(`${process.env.REACT_APP_API_URL}/api/register`)
       .then((response) => setWorkout(response.data))
       .then(() => navigate("/workouts"))
       .catch((error) => console.log(error));

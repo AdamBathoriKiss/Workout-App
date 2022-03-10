@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
 
-const API_URL = "http://localhost:5005";
 
 function WorkoutDetails (props) {
   const [workout, setWorkout] = useState(null);
@@ -11,7 +10,7 @@ function WorkoutDetails (props) {
   const navigate =  useNavigate();
   const getWorkout = () => {
     axios
-      .get(`${API_URL}/api/register`)
+      .get(`${process.env.REACT_APP_API_URL}/api/register`)
       .then((response) => {
       	const oneWorkout = response.data;
         console.log(oneWorkout)
@@ -28,7 +27,7 @@ function WorkoutDetails (props) {
  
   const deleteWorkout = () => {
     axios
-    .delete(`${API_URL}/api/register/${workoutId}`)
+    .delete(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`)
     .then(() => navigate("/workouts"))
     .catch((error) => console.log(error));
 
@@ -41,7 +40,7 @@ function WorkoutDetails (props) {
     <div className="WorkoutDetails">
     <h3>Exercises</h3>
     <button onClick={deleteWorkout}>Delete</button>
-      
+    
 
       <Link to="/workouts">
         <button>Back to Workouts</button>
