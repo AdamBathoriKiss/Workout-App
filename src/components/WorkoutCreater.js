@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
  
-const API_URL = "http://localhost:5005";
+
 
 function WorkoutCreater(props) {
 
@@ -21,7 +21,7 @@ function WorkoutCreater(props) {
     
         const requestBody = { nameOfWorkout };
      
-        axios.post(`${API_URL}/api/register`, requestBody)
+        axios.post(`${process.env.REACT_APP_API_URL}/api/register`, requestBody)
         .then(() => navigate("/workouts"))
           .catch((error) => {
             const errorDescription = error.response.data.message;
