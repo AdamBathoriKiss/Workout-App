@@ -59,7 +59,7 @@ function Addingexer (props) {
       <div className="Test">
       {exerciseinfo.map((exercise) => 
 
-      <input type="text" defaultValue={exercise.nameOfExercise} disabled={exercises.disabled}></input>
+      <input type="text" defaultValue={exercise.nameOfExercise}></input>
       )}
       
       <button>Add To Workout</button>
