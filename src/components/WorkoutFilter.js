@@ -29,12 +29,13 @@ function WorkoutFilter(props) {
   return (
     <div className="FilterWorkouts">
 
-{workouts.filter((workout) => {
+{workouts.map((workout) => {
     return (
         <div className='Tester'>
 <label>Select Exercises:</label>
       <select value={workoutname} onChange={handleSelect}>
-        <option value="name">{workout.nameOfWorkout}</option>
+        <option value="name">{workout.nameOfWorkout,
+                                workout.nameOfWorkout}</option>
       </select>
       </div>
     )
