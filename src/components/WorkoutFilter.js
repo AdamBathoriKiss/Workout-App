@@ -31,17 +31,17 @@ function WorkoutFilter(props) {
     return (
         <div className='Tester'>
 
-     
         <option value={workout.nameOfWorkout}>{workout.nameOfWorkout}</option>
-      
+    
       </div>
     )
+    console.log(list)
+    
 })
 
   return (
     <div className="FilterWorkouts">
-
-
+        
 <label>Select Exercises:</label>
 <select value={workoutname} onChange={handleSelect}>{list}</select>
       
