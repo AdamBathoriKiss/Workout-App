@@ -321,13 +321,11 @@ margin-right: auto;
 
 }
 
-.AddEx a {
-  text-decoration: none;
-}
 
 .Addbutn  {
-
+  width: 45%;
   background-color: #141414;
   text-decoration: none;
+  color: #94a7c8;
 
 }

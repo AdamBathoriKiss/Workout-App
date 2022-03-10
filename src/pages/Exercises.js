@@ -2,9 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import FilterExercises from "../components/FilterExercises";
-import Addingexer from "../components/Addingexer";
 
-//import { Link } from "react-router-dom";
  
 
 
