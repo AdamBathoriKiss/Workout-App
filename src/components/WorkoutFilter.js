@@ -34,7 +34,7 @@ function WorkoutFilter(props) {
         <div className='Tester'>
 <label>Select Exercises:</label>
       <select value={workoutname} onChange={handleSelect}>
-        <option value={workout.nameOfWorkout}>{workout.nameOfWorkout}</option>
+        <option value="name">{workout.nameOfWorkout}</option>
       </select>
       </div>
     )
