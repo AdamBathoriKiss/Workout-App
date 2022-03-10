@@ -42,7 +42,7 @@ function WorkoutFilter(props) {
 <label>Select Exercises:</label>
 
         <select value={workoutname} onChange={handleSelect}>
-        <option value={workout.nameOfWorkout}>{list}</option>
+        <option value="name">{list}</option>
         </select>
       </div>
 
