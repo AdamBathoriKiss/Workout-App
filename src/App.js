@@ -29,7 +29,7 @@ function App() {
     <Route path="/exercises/:exerciseId" element={<Addingexer />} /> 
     <Route path="*" element={<ErrorPage/>}/>
     </Routes>
-
+    
     </div>
   );
 }
