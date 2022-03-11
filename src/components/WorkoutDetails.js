@@ -7,10 +7,10 @@ function WorkoutDetails (props) {
   const [workout, setWorkout] = useState([]);
   const { workoutId } = useParams();
   const navigate =  useNavigate();
-  const [exerciseinfo,setExerciseinfo] = useState([]);
-  const [exerciseState, setExerciseState] = useState("");
-  const [numReps, setNumReps] = useState(5);
-  const [numSets, setNumSets] = useState(5);
+  // const [exerciseinfo,setExerciseinfo] = useState([]);
+  // const [exerciseState, setExerciseState] = useState("");
+  // const [numReps, setNumReps] = useState(5);
+  // const [numSets, setNumSets] = useState(5);
 
   const getWorkout = () => {
     axios
@@ -39,20 +39,20 @@ function WorkoutDetails (props) {
   return (
     <div className="WorkoutDetails">
 
-{workout.map((currentwork) => {
-              return (
-                <div className="ProjectCard" key={currentwork._id} >
-                <h3>{currentwork.nameOfWorkout}</h3>
-              <p>{currentwork.exercises}</p>
-              <h5>{currentwork.numberOfReps}</h5>
-              <h5>{currentwork.sets}</h5>
+{workout.map((workouts) => {
+                   
+                   return (
+                     <div className="Workoutcard" key={workouts.id} >
+  
+                       <Link to={`/workouts/${workouts._id}`}>
+                               <h3>{workouts.nameOfWorkout}</h3>
+                              
+                             </Link>
+                       
+                   </div>
+                   );
 
-       
-                             
-                </div>
-              );
-
-      })} 
+                 })}
 
     <button onClick={deleteWorkout}>Delete</button>
     
