@@ -39,8 +39,6 @@ function WorkoutDetails (props) {
     axios
       .put(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`, requestBody)
       .then((response) => {
-        // Once the request is resolved successfully and the project
-        // is updated we navigate back to the details page
         navigate("/workouts/" + workoutId);
       });
   };
@@ -78,16 +76,16 @@ function WorkoutDetails (props) {
                     
                      <div className="form-group">
                          <label>Workout name</label>
-                         <input type="text" className="form-control" placeholder="Chest day"  value={nameOfWorkout}
+                         <input type="text" className="form-control" placeholder="Chest day" name="nameOfWorkout" value={nameOfWorkout}
                onChange={(e) => setnameOfWorkout(e.target.value)}/>
                 <label>Exercise name</label>
-                         <input type="text" className="form-control" placeholder="Push up"  value={exercises}
+                         <input type="text" className="form-control" placeholder="Push up" name="exercises" value={exercises}
                onChange={(e) => setExercises(e.target.value)} />
                <label>Number of Reps:</label>
-             <input type="number" className="form-control" placeholder="4" value={numberOfReps} onChange={(e) => setNumberOfReps(e.target.value)} />
+             <input type="number" className="form-control" placeholder="4" name="numberOfReps" value={numberOfReps} onChange={(e) => setNumberOfReps(e.target.value)} />
      
              <label>Number of Sets:</label>
-             <input type="number" className="form-control" placeholder="4" value={sets} onChange={(e) => setSets(e.target.value)} />
+             <input type="number" className="form-control" placeholder="4" name="sets" value={sets} onChange={(e) => setSets(e.target.value)} />
                      </div>
               
                      <button type="submit" className="btn btn-primary btn-block" >Update</button>
