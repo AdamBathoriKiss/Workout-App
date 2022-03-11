@@ -53,7 +53,7 @@ function WorkoutDetails (props) {
                                 <h5>Number of Reps: {workouts.numberOfReps}</h5>
                                 <h5>Number of Sets: {workouts.sets}</h5>
                              
-                       
+                              <button>Edit</button>
                    </div>
                    );
 
