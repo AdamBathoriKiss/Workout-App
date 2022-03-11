@@ -7,10 +7,19 @@ function WorkoutDetails (props) {
   const [workout, setWorkout] = useState([]);
   const { workoutId } = useParams();
   const navigate =  useNavigate();
-  // const [exerciseinfo,setExerciseinfo] = useState([]);
-  // const [exerciseState, setExerciseState] = useState("");
-  // const [numReps, setNumReps] = useState(5);
-  // const [numSets, setNumSets] = useState(5);
+  const [nameOfWorkout, setnameOfWorkout] = useState("");
+  const [exercises, setExercises] = useState("");
+  const [numberOfReps, setNumberOfReps] = useState("");
+  const [sets, setSets] = useState("");
+  const [errorMessage, setErrorMessage] = useState(undefined);
+ 
+  const navigate = useNavigate();
+  
+
+  const handleName = (e) => setnameOfWorkout(e.target.value);
+  const handleExercises = (e) => setExercises(e.target.value);
+  const handleNumberOfReps = (e) => setNumberOfReps(e.target.value);
+  const handlesetSets = (e) => setSets(e.target.value);
 
   const getWorkout = () => {
     axios
@@ -27,6 +36,21 @@ function WorkoutDetails (props) {
     getWorkout();
    
   }, [] );
+
+  const handleFormSubmit = (e) => {                     // <== ADD
+    e.preventDefault();
+    // Create an object representing the body of the PUT request
+    const requestBody = {  nameOfWorkout, exercises, numberOfReps, sets };
+ 
+    // Make a PUT request to update the project
+    axios
+      .put(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`, requestBody)
+      .then((response) => {
+        // Once the request is resolved successfully and the project
+        // is updated we navigate back to the details page
+        navigate("/workouts/" + projectId);
+      });
+  };
 
  
   const deleteWorkout = () => {
@@ -52,9 +76,34 @@ function WorkoutDetails (props) {
                                 <h5>Exercise name: {workouts.exercises}</h5>
                                 <h5>Number of Reps: {workouts.numberOfReps}</h5>
                                 <h5>Number of Sets: {workouts.sets}</h5>
-                             
-                              <button>Edit</button>
-                   </div>
+
+
+
+                  <h3>Edit Workout</h3>              
+                  
+                   <form onSubmit={handleFormSubmit}>
+                    
+                     <div className="form-group">
+                         <label>Workout name</label>
+                         <input type="text" className="form-control" placeholder="Chest day"  value={nameOfWorkout}
+               onChange={(e) => setnameOfWorkout(e.target.value)}/>
+                <label>Exercise name</label>
+                         <input type="text" className="form-control" placeholder="Push up"  value={exercises}
+               onChange={(e) => setExercises(e.target.value)} />
+               <label>Number of Reps:</label>
+             <input type="number" className="form-control" placeholder="4" value={numberOfReps} onChange={(e) => setNumberOfReps(e.target.value)} />
+     
+             <label>Number of Sets:</label>
+             <input type="number" className="form-control" placeholder="4" value={sets} onChange={(e) => setSets(e.target.value)} />
+                     </div>
+              
+                     <button type="submit" className="btn btn-primary btn-block" >Update</button>
+     
+                     { errorMessage && <p className="error-message">{errorMessage}</p> }
+                   
+                     
+                 </form>
+                 </div>
                    );
 
                  })}
