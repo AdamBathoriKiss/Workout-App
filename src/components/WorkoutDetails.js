@@ -77,11 +77,11 @@ function WorkoutDetails (props) {
  
     // Make a PUT request to update the project
     axios
-      .put(`${process.env.REACT_APP_API_URL}/api/workouts/${projectId}`, requestBody)
+      .put(`${process.env.REACT_APP_API_URL}/api/workouts/${workoutId}`, requestBody)
       .then((response) => {
         // Once the request is resolved successfully and the project
         // is updated we navigate back to the details page
-        navigate("/workouts/" + workoutsId);
+        navigate("/workouts/" + workoutId);
       });
   };
 
