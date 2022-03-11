@@ -48,10 +48,10 @@ function WorkoutDetails (props) {
                      <div className="Workoutcard" key={workouts.id} >
   
                       
-                               <h3>{workouts.nameOfWorkout}</h3>
-                                <h5>{workouts.exercises}</h5>
-                                <h5>{workouts.numberOfReps}</h5>
-                                <h5>{workouts.sets}</h5>
+                               <h3>Name of Workout: {workouts.nameOfWorkout}</h3>
+                                <h5>Exercise name: {workouts.exercises}</h5>
+                                <h5>Number of Reps: {workouts.numberOfReps}</h5>
+                                <h5>Number of Sets: {workouts.sets}</h5>
                              
                        
                    </div>
