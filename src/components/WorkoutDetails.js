@@ -9,6 +9,8 @@ function WorkoutDetails (props) {
   const navigate =  useNavigate();
   const [exerciseinfo,setExerciseinfo] = useState([]);
   const [exerciseState, setExerciseState] = useState("");
+  const [numReps, setNumReps] = useState(5);
+  const [numSets, setNumSets] = useState(5);
 
   const getWorkout = () => {
     axios
@@ -64,14 +66,42 @@ function WorkoutDetails (props) {
   }
 
 
+  const handleNumberReps = (e) => setNumReps(e.target.value);
+  const handleNumberSets = (e) => setNumSets(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newWork = { title, numReps, numSets };
+    
+    console.log("Submitted", newWork);
+    props.addWork(newWork);
+
+   
+    setNumReps(5);
+    setNumSets(5);
+  }
+
+
+
   
   return (
     <div className="WorkoutDetails">
 
-    <h3>Select a Workout:</h3>
+    <h3>Update Your Workout:</h3>
       <WorkoutFilter filterExercises = {filterExerciseList}/>
       <div className="Test">
+
+      <form onSubmit={handleSubmit}>
      
+        <label>Number of Reps:</label>
+        <input type="number" name="NumReps" value={IMDBRating} onChange={handleNumberReps} />
+
+        <label>Number of Sets:</label>
+        <input type="number" name="NumSets" value={IMDBRating} onChange={handleNumberSets} />
+
+        <button type="submit">Add Exercise</button>
+      </form>
+    
       </div>
 
     <button onClick={deleteWorkout}>Delete</button>
