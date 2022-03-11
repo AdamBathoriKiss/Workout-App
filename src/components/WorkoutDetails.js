@@ -15,7 +15,7 @@ function WorkoutDetails (props) {
   const getWorkout = () => {
     axios
     .get(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`)
-    .then(() =>  setWorkout(response.data))
+    .then((response) =>  setWorkout(response.data))
     .catch((error) => console.log(error));
 
   }
