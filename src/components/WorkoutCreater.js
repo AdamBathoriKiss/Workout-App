@@ -49,10 +49,10 @@ function WorkoutCreater(props) {
                     <input type="text" className="form-control" placeholder="Push up"  value={exercises}
           onChange={handleExercises} />
           <label>Number of Reps:</label>
-        <input type="number" className="form-control" placeholder="4" value={numReps} onChange={handleNumberOfReps} />
+        <input type="number" className="form-control" placeholder="4" value={numberOfReps} onChange={handleNumberOfReps} />
 
         <label>Number of Sets:</label>
-        <input type="number" className="form-control" placeholder="4" value={numSets} onChange={handlesetSets} />
+        <input type="number" className="form-control" placeholder="4" value={sets} onChange={handlesetSets} />
                 </div>
          
                 <button type="submit" className="btn btn-primary btn-block" >Create</button>
