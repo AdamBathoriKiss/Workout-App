@@ -13,14 +13,7 @@ function WorkoutDetails (props) {
   const [sets, setSets] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
  
-  const navigate = useNavigate();
   
-
-  const handleName = (e) => setnameOfWorkout(e.target.value);
-  const handleExercises = (e) => setExercises(e.target.value);
-  const handleNumberOfReps = (e) => setNumberOfReps(e.target.value);
-  const handlesetSets = (e) => setSets(e.target.value);
-
   const getWorkout = () => {
     axios
     .get(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`)
