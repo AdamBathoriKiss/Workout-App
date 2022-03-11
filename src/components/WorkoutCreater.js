@@ -8,13 +8,18 @@ function WorkoutCreater(props) {
 
  
     const [nameOfWorkout, setnameOfWorkout] = useState("");
+    const [exercises, setExercises] = useState("");
+    const [numberOfReps, setNumberOfReps] = useState("");
+    const [sets, setSets] = useState("");
     const [errorMessage, setErrorMessage] = useState(undefined);
    
     const navigate = useNavigate();
     
 
     const handleName = (e) => setnameOfWorkout(e.target.value);
-   
+    const handleExercises = (e) => setExercises(e.target.value);
+    const handleNumberOfReps = (e) => setNumberOfReps(e.target.value);
+    const handlesetSets = (e) => setSets(e.target.value);
     
     const handleWorkout = (e) => {
         e.preventDefault();
@@ -42,12 +47,12 @@ function WorkoutCreater(props) {
           onChange={handleName} />
            <label>Exercise name</label>
                     <input type="text" className="form-control" placeholder="Push up"  value={exercises}
-          onChange={handleName} />
+          onChange={handleExercises} />
           <label>Number of Reps:</label>
-        <input type="number" className="form-control" placeholder="4" value={numReps} onChange={numberOfReps} />
+        <input type="number" className="form-control" placeholder="4" value={numReps} onChange={handleNumberOfReps} />
 
         <label>Number of Sets:</label>
-        <input type="number" className="form-control" placeholder="4" value={numSets} onChange={sets} />
+        <input type="number" className="form-control" placeholder="4" value={numSets} onChange={handlesetSets} />
                 </div>
          
                 <button type="submit" className="btn btn-primary btn-block" >Create</button>
