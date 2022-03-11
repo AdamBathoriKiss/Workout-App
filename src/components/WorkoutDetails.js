@@ -40,7 +40,7 @@ function WorkoutDetails (props) {
   return (
     <div className="WorkoutDetails">
 
-<div className="Workouts">
+<div className="WorkoutDetail">
 
 {workout && workout.map((workouts) => {
                    
@@ -61,7 +61,7 @@ function WorkoutDetails (props) {
 
 </div> 
 
-    <button onClick={deleteWorkout}>Delete</button>
+    <button onClick={deleteWorkout}>Delete Current Workout</button>
     
 
       <Link to="/workouts">
