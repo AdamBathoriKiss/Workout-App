@@ -45,7 +45,7 @@ function WorkoutDetails (props) {
 {workout && workout.map((workouts) => {
                    
                    return (
-                     <div className="Workoutcard" key={workouts.id} >
+                     <div className="WorkoutExercisecard" key={workouts.id} >
   
                       
                                <h3>Name of Workout: {workouts.nameOfWorkout}</h3>
