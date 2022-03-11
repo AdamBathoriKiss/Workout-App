@@ -39,7 +39,7 @@ function WorkoutDetails (props) {
 
 <div className="Workouts">
 
-{workout.map((workouts) => {
+{workout && workout.map((workouts) => {
                    
                    return (
                      <div className="Workoutcard" key={workouts.id} >
