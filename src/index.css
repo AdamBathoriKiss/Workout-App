@@ -336,6 +336,8 @@ margin-right: auto;
   width: 100%;
   min-height: 35vh;
   color: #fff;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px grey;
   display: flex;
   flex-direction: column;
   justify-content: center;
