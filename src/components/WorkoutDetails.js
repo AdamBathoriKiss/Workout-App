@@ -14,45 +14,15 @@ function WorkoutDetails (props) {
 
   const getWorkout = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/register`)
-      .then((response) => {
-      	const oneWorkout = response.data;
-        console.log(oneWorkout)
-      	setWorkout(oneWorkout);
-    	})
-      .catch((error) => console.log(error));
-  };
-
-  const getExercises = () => {
-    axios
-      .get(`${process.env.REACT_APP_API_URL}/api/exercises`)
-      .then((response) => { 
-        setExerciseinfo(response.data)
-       })
-      .catch((error) => console.log(error));
-  };
-
-
-  const filterExerciseList = str => {
-    let exerciseCopy = [...exerciseState];
-    let filteredExercise;
-    console.log(str, 'String inside');
-    if(str === ''){
-      filteredExercise = exerciseCopy; 
-    }else {
-      filteredExercise = exerciseCopy.filter(exercise => {
-        return exercise.nameOfExercise === str;
-      });
-    }
-
-    setWorkout(filteredExercise);
+    .get(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`)
+    .then(() =>  setWorkout(response.data))
+    .catch((error) => console.log(error));
 
   }
-
   
   useEffect(() => {
     getWorkout();
-    getExercises();
+   
   }, [] );
 
  
@@ -62,48 +32,27 @@ function WorkoutDetails (props) {
     .then(() => navigate("/workouts"))
     .catch((error) => console.log(error));
 
-
   }
 
   
-  const handleNumberReps = (e) => setNumReps(e.target.value);
-  const handleNumberSets = (e) => setNumSets(e.target.value);
-
-
-  const handleFormSubmit = (e) => {                     // <== ADD
-    e.preventDefault();
-    // Create an object representing the body of the PUT request
-    const requestBody = { numReps, numSets };
- 
-    // Make a PUT request to update the project
-    axios
-      .put(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`, requestBody)
-      .then((response) => {
-       
-        navigate("/workouts/" + workoutId);
-      });
-  };
-
 
   return (
     <div className="WorkoutDetails">
 
-    <h3>Update Your Workout:</h3>
-      <WorkoutFilter filterExercises = {filterExerciseList}/>
-      <div className="Test">
+{workout.map((currentwork) => {
+              return (
+                <div className="ProjectCard" key={currentwork._id} >
+                <h3>{currentwork.nameOfWorkout}</h3>
+              <p>{currentwork.exercises}</p>
+              <h5>{currentwork.numberOfReps}</h5>
+              <h5>{currentwork.sets}</h5>
 
-      <form onSubmit={handleFormSubmit}>
-     
-        <label>Number of Reps:</label>
-        <input type="number" name="NumReps" value={numReps} onChange={handleNumberReps} />
+       
+                             
+                </div>
+              );
 
-        <label>Number of Sets:</label>
-        <input type="number" name="NumSets" value={numSets} onChange={handleNumberSets} />
-
-        <button type="submit">Add Exercise</button>
-      </form>
-    
-      </div>
+      })} 
 
     <button onClick={deleteWorkout}>Delete</button>
     
