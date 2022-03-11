@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import WorkoutFilter from "./WorkoutFilter";
 
 function WorkoutDetails (props) {
   const [workout, setWorkout] = useState(null);
@@ -31,7 +31,6 @@ function WorkoutDetails (props) {
     .then(() => navigate("/workouts"))
     .catch((error) => console.log(error));
 
-
   }
 
 
@@ -39,6 +38,14 @@ function WorkoutDetails (props) {
   return (
     <div className="WorkoutDetails">
     <h3>Exercises</h3>
+    <WorkoutFilter filterWokrouts = {filterWorkoutList}/>
+      <div className="Test">
+
+     
+      
+      <button>Add To Workout</button>
+
+      </div>
     <button onClick={deleteWorkout}>Delete</button>
     
 

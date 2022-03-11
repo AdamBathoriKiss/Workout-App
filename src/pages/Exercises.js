@@ -55,10 +55,7 @@ function Exercises() {
               <p>{exercise.description}</p>
               <h5>{exercise.category}</h5>
 
-        <Link to={`/exercises/${exercise._id}`}>
-
-                              <h3 className="Addbutn">Add</h3>
-                                  </Link>
+       
                              
                 </div>
               );
