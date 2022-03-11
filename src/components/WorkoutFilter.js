@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
-function ExerciseFilter(props) {
+function WorkoutFilter(props) {
   const [exercisname, setExerciseName] = useState('');
   const [exercises, setExercises] = useState([]);
 
     console.log(props);
   const handleSelect = e => {
     setExerciseName(e.target.value);
-    props.ExerciseFilter(e.target.value);
+    props.WorkoutFilter(e.target.value);
     console.log('selected', e.target.value);
 
   };
@@ -44,4 +44,4 @@ function ExerciseFilter(props) {
   );
 }
 
-export default ExerciseFilter;
+export default WorkoutFilter;

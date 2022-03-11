@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
-import ExerciseFilter from "./ExerciseFilter";
+import WorkoutFilter from "./WorkoutFilter";
 
 function WorkoutDetails (props) {
   const [workout, setWorkout] = useState(null);
@@ -69,7 +69,7 @@ function WorkoutDetails (props) {
     <div className="WorkoutDetails">
 
     <h3>Select a Workout:</h3>
-      <ExerciseFilter filterExercises = {filterExerciseList}/>
+      <WorkoutFilter filterExercises = {filterExerciseList}/>
       <div className="Test">
       {exerciseinfo.map((exercise) => 
 
