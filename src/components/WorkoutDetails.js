@@ -41,7 +41,7 @@ function WorkoutDetails (props) {
       .then((response) => {
         // Once the request is resolved successfully and the project
         // is updated we navigate back to the details page
-        navigate("/workouts/" + projectId);
+        navigate("/workouts/" + workoutId);
       });
   };
 
