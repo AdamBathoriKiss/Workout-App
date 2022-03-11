@@ -21,6 +21,7 @@ function WorkoutDetails (props) {
       console.log(response)
       console.log('workout' , workout)
     })
+    
     .catch((error) => console.log(error));
 
   }
@@ -39,7 +40,7 @@ function WorkoutDetails (props) {
     axios
       .put(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`, requestBody)
       .then((response) => {
-        navigate("/workouts/" + workoutId);
+        navigate("/workouts" + workoutId);
       });
   };
 
