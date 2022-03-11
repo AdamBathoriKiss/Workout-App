@@ -65,25 +65,27 @@ function WorkoutDetails (props) {
 
   }
 
-
+  
   const handleNumberReps = (e) => setNumReps(e.target.value);
   const handleNumberSets = (e) => setNumSets(e.target.value);
 
-  const handleSubmit = (e) => {
+
+  const handleFormSubmit = (e) => {                     // <== ADD
     e.preventDefault();
-    const newWork = { numReps, numSets };
-    
-    console.log("Submitted", newWork);
-    props.addWork(newWork);
+    // Create an object representing the body of the PUT request
+    const requestBody = { numReps, numSets };
+ 
+    // Make a PUT request to update the project
+    axios
+      .put(`${process.env.REACT_APP_API_URL}/api/workouts/${projectId}`, requestBody)
+      .then((response) => {
+        // Once the request is resolved successfully and the project
+        // is updated we navigate back to the details page
+        navigate("/workouts/" + workoutsId);
+      });
+  };
 
-   
-    setNumReps(5);
-    setNumSets(5);
-  }
 
-
-
-  
   return (
     <div className="WorkoutDetails">
 
@@ -91,7 +93,7 @@ function WorkoutDetails (props) {
       <WorkoutFilter filterExercises = {filterExerciseList}/>
       <div className="Test">
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleFormSubmit}>
      
         <label>Number of Reps:</label>
         <input type="number" name="NumReps" value={numReps} onChange={handleNumberReps} />
