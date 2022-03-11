@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import WorkoutFilter from "./WorkoutFilter";
 
 function WorkoutDetails (props) {
   const [workout, setWorkout] = useState(null);
