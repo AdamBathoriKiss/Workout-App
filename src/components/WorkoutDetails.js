@@ -71,10 +71,7 @@ function WorkoutDetails (props) {
     <h3>Select a Workout:</h3>
       <WorkoutFilter filterExercises = {filterExerciseList}/>
       <div className="Test">
-      {exerciseinfo.map((exercise) => 
-
-      <input type="text" defaultValue={exercise.nameOfExercise}></input>
-      )}
+     
       </div>
 
     <button onClick={deleteWorkout}>Delete</button>
