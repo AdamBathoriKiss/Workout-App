@@ -49,7 +49,9 @@ function WorkoutDetails (props) {
   
                       
                                <h3>{workouts.nameOfWorkout}</h3>
-                              
+                                <h5>{workouts.exercises}</h5>
+                                <h5>{workouts.numberOfReps}</h5>
+                                <h5>{workouts.sets}</h5>
                              
                        
                    </div>
