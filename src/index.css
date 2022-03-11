@@ -333,7 +333,7 @@ margin-right: auto;
 .WorkoutExercisecard{
 
   background-color: #6A00FF;
-  width: 35%;
+  width: 100%;
   min-height: 35vh;
   color: #fff;
   display: flex;
