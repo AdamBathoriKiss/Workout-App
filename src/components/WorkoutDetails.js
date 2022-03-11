@@ -71,7 +71,7 @@ function WorkoutDetails (props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const newWork = { title, numReps, numSets };
+    const newWork = { numReps, numSets };
     
     console.log("Submitted", newWork);
     props.addWork(newWork);
@@ -94,10 +94,10 @@ function WorkoutDetails (props) {
       <form onSubmit={handleSubmit}>
      
         <label>Number of Reps:</label>
-        <input type="number" name="NumReps" value={IMDBRating} onChange={handleNumberReps} />
+        <input type="number" name="NumReps" value={numReps} onChange={handleNumberReps} />
 
         <label>Number of Sets:</label>
-        <input type="number" name="NumSets" value={IMDBRating} onChange={handleNumberSets} />
+        <input type="number" name="NumSets" value={numSets} onChange={handleNumberSets} />
 
         <button type="submit">Add Exercise</button>
       </form>
