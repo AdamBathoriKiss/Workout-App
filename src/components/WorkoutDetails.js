@@ -4,7 +4,7 @@ import axios from "axios";
 import WorkoutFilter from "./WorkoutFilter";
 
 function WorkoutDetails (props) {
-  const [workout, setWorkout] = useState();
+  const [workout, setWorkout] = useState([]);
   const { workoutId } = useParams();
   const navigate =  useNavigate();
   const [exerciseinfo,setExerciseinfo] = useState([]);
