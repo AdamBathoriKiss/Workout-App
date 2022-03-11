@@ -15,7 +15,8 @@ function WorkoutDetails (props) {
   const getWorkout = () => {
     axios
     .get(`${process.env.REACT_APP_API_URL}/api/register/${workoutId}`)
-    .then((response) =>  setWorkout(response.data))
+    .then((response) => setWorkout(response.data))
+    console.log(workout)
     .catch((error) => console.log(error));
 
   }
@@ -34,8 +35,6 @@ function WorkoutDetails (props) {
 
   }
 
-  
-
   return (
     <div className="WorkoutDetails">
 
@@ -46,10 +45,10 @@ function WorkoutDetails (props) {
                    return (
                      <div className="Workoutcard" key={workouts.id} >
   
-                       <Link to={`/workouts/${workouts._id}`}>
+                      
                                <h3>{workouts.nameOfWorkout}</h3>
                               
-                             </Link>
+                             
                        
                    </div>
                    );
