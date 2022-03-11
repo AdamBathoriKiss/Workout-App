@@ -1,5 +1,3 @@
-// src/components/FilterMovies.js
-
 import { useState, useEffect } from "react";
 import axios from 'axios';
 
@@ -17,7 +15,7 @@ function WorkoutFilter(props) {
 
   const getAllWorkouts = () => {
     axios
-      .get(`${process.env.REACT_APP_API_URL}/api/exercises`)
+      .get(`${process.env.REACT_APP_API_URL}/api/register`)
       .then((response) => setWorkouts(response.data))
       .catch((error) => console.log(error));
   };
@@ -35,7 +33,7 @@ function WorkoutFilter(props) {
 
         <select value={workoutname} onChange={handleSelect}>
         <option value="Select Workout">Select Workout</option>    
-        {workouts.map((workout)=> <option value={workout.nameOfExercise}>{workout.nameOfExercise}</option>)}
+        {workouts.map((workout)=> <option value={workout.nameOfWorkout}>{workout.nameOfWorkout}</option>)}
         </select>
       </div>
 
