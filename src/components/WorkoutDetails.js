@@ -39,6 +39,8 @@ function WorkoutDetails (props) {
   return (
     <div className="WorkoutDetails">
 
+<div className="Workouts">
+
 {workout.map((workouts) => {
                    
                    return (
@@ -53,6 +55,8 @@ function WorkoutDetails (props) {
                    );
 
                  })}
+
+</div> 
 
     <button onClick={deleteWorkout}>Delete</button>
     
